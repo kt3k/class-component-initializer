@@ -1,0 +1,22 @@
+{
+  "name": "class-component-initializer",
+  "main": "class-component-initializer.js",
+  "version": "0.1.0",
+  "authors": [
+    "Yoshiya Hinosawa <stibium121@gmail.com>"
+  ],
+  "description": "Initialize class components with promise",
+  "keywords": [
+    "class-component",
+    "cci",
+    "class-component-initializer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
