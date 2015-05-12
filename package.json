@@ -1,0 +1,28 @@
+{
+  "name": "class-component-initializer",
+  "version": "0.1.0",
+  "description": "Initialize class components with promise",
+  "main": "class-component-initializer.js",
+  "scripts": {
+    "test": "karma start karma.conf.js --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kt3k/class-component-initializer.git"
+  },
+  "keywords": [
+    "class-component"
+  ],
+  "author": "Yoshiya Hinosawa <stibium121@gmail.com> (https://twitter.com/kt3k)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kt3k/class-component-initializer/issues"
+  },
+  "homepage": "https://github.com/kt3k/class-component-initializer",
+  "devDependencies": {
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.10",
+    "karma-mocha": "^0.1.10",
+    "mocha": "^2.2.4"
+  }
+}
