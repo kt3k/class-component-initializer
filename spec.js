@@ -31,8 +31,6 @@ before(function () {
 
         pt.init = function () {
 
-            console.log('init');
-
             return new Promise(function (resolve) {
 
                 setTimeout(resolve, 500);
