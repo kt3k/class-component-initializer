@@ -119,6 +119,9 @@ describe('class-component-initializer', function () {
 
                 done();
 
+                foo.remove();
+                bar.remove();
+
             });
 
         });
