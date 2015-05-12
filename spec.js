@@ -115,10 +115,10 @@ describe('class-component-initializer', function () {
                 expect(foo.attr('is_foo')).to.equal('true');
                 expect(bar.attr('is_bar')).to.equal('true');
 
-                done();
-
                 foo.remove();
                 bar.remove();
+
+                done();
 
             });
 
