@@ -43,7 +43,7 @@ $.defineRole('cci', function (pt, parent) {
      */
     pt.init = function () {
 
-        var classNames = Array.prototype.slice(arguments);
+        var classNames = Array.prototype.slice.call(arguments);
 
         var that = this;
 
@@ -67,15 +67,15 @@ $.defineRole('cci', function (pt, parent) {
 
         var doc = $(document);
 
-        var promise = new Promise(function () {
+        var promise = new Promise(function (resolve) {
 
             doc.one(startEventName, function (e, elements) {
 
-                return Promise.all(elements.toArray().map(function (elem) {
+                Promise.all(elements.toArray().map(function (elem) {
 
-                    return elem.customClassReady(className);
+                    return $(elem).classComponentReady(className);
 
-                }));
+                })).then(resolve);
 
             });
 

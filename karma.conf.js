@@ -10,12 +10,18 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'chai'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'class-component-initializer.js'
+      'bower_components/jquery/dist/jquery.js',
+      'bower_components/class-component/class-component.js',
+      'bower_components/subclassjs/index.js',
+      'bower_components/actor-system/actor-system.js',
+      'bower_components/es6-promise/promise.js',
+      'class-component-initializer.js',
+      'spec.js'
     ],
 
 
