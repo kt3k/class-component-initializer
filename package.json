@@ -4,7 +4,10 @@
   "description": "Initialize class components with promise",
   "main": "class-component-initializer.js",
   "scripts": {
-    "test": "karma start karma.conf.js --single-run"
+    "test": "karma start karma.conf.js --single-run",
+    "ci": "karma start karma.conf.js --single-run --browsers PhantomJS",
+    "coverage": "karma start karma.conf.js --single-run --reporters progress,coverage",
+    "coveralls": "karma start karma.conf.js --single-run --browsers PhantomJS --reporters progress,coverage,coveralls"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,8 @@
     "karma": "^0.12.31",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.10",
+    "karma-coverage": "^0.3.1",
+    "karma-coveralls": "^0.1.5",
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "^2.2.4"
