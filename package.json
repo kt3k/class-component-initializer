@@ -1,6 +1,6 @@
 {
   "name": "class-component-initializer",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Initialize class components with promise",
   "main": "class-component-initializer.js",
   "scripts": {
