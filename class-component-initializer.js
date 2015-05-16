@@ -1,5 +1,5 @@
 /**
- * class-component-initializer.js v1.1.0
+ * class-component-initializer.js v1.1.1
  * author: Yoshiya Hinosawa ( https://github.com/kt3k )
  * license: MIT
  */
