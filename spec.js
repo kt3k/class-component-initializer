@@ -29,7 +29,7 @@ before(function () {
 
         };
 
-        pt.init = function () {
+        pt.__init = function () {
 
             return new Promise(function (resolve) {
 
