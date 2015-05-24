@@ -26,7 +26,7 @@
 
      </script>
  */
-$.defineRole('cci', function (pt, parent) {
+jQuery.defineRole('cci', function (pt, parent) {
 
     pt.constructor = function (elem) {
 
