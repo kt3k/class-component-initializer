@@ -5,35 +5,7 @@
  */
 
 
-
-
-/**
- ClassComponentInitializer is the utility class to help initializing the class component elements on the page.
-
- @example
-
-     <body class="cci">
-
-     </body>
-
-     <script>
-
-     $(document.body).getRole('cci').init('foo', 'bar', 'baz').then(function () {
-
-         // interaction with foo, bar and baz elements
-
-     });
-
-     </script>
- */
-jQuery.defineRole('cci', function (pt, parent) {
-
-    pt.constructor = function (elem) {
-
-        elem.data('__role:cci', this);
-
-    };
-
+(function ($, Promise) {
 
     /**
      * Initialized the all class components of the given names and returns of the promise of all initialization.
@@ -41,15 +13,13 @@ jQuery.defineRole('cci', function (pt, parent) {
      * @param {String[]} arguments
      * @return {Promise}
      */
-    pt.init = function () {
+    $.CC.init = function () {
 
         var classNames = Array.prototype.slice.call(arguments);
 
-        var that = this;
-
         return Promise.all(classNames.map(function (className) {
 
-            return that.initOne(className);
+            return initOne(className);
 
         }));
     };
@@ -60,7 +30,7 @@ jQuery.defineRole('cci', function (pt, parent) {
      * @param {String} className The class name to initialize
      * @return {Promise}
      */
-    pt.initOne = function (className) {
+    initOne = function (className) {
 
         var initEventName = 'init-class.' + className;
         var startEventName = 'init-class-started.' + className;
@@ -86,4 +56,4 @@ jQuery.defineRole('cci', function (pt, parent) {
         return promise;
     };
 
-});
+}(jQuery, Promise));

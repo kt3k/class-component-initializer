@@ -21,6 +21,6 @@
   ],
   "dependencies": {
     "es6-promise": "~2.1.0",
-    "actor-system": "^1.4.0"
+    "actor-system": "^4.0.0"
   }
 }
