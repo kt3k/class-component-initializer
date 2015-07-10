@@ -32,28 +32,18 @@
      */
     initOne = function (className) {
 
-        var initEventName = 'init-class.' + className;
-        var startEventName = 'init-class-started.' + className;
+        return new Promise(function (resolve) {
 
-        var doc = $(document);
+            var elements = $.CC.initClassComponent(className);
 
-        var promise = new Promise(function (resolve) {
+            Promise.all(elements.map(function (elem) {
 
-            doc.one(startEventName, function (e, elements) {
+                return $(elem).classComponentReady(className);
 
-                Promise.all(elements.toArray().map(function (elem) {
-
-                    return $(elem).classComponentReady(className);
-
-                })).then(resolve);
-
-            });
+            })).then(resolve);
 
         });
 
-        doc.trigger(initEventName);
-
-        return promise;
     };
 
 }(jQuery, Promise));
