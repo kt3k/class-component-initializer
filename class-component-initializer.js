@@ -62,6 +62,16 @@
 
     };
 
+
+    /**
+     * Spawns the class components from the given url's html contents.
+     *
+     * @param {String} url The url
+     * @param {String|Array<String>} classNames The class names
+     * @param {Object} options This options is passed to $.ajax method call
+     * @param {Boolean} [options.prepend] if true then prepends the spawned components in the element otherwise appends
+     * @return {Promise}
+     */
     $.fn.spawn = function (url, classNames, options) {
 
         var elem = this;
@@ -70,7 +80,16 @@
 
         return Promise.resolve($.ajax(url, options)).then(function (data) {
 
-            elem.append($(data));
+            if (options.prepend) {
+
+                elem.prepend($(data));
+
+            } else {
+
+                elem.append($(data));
+
+            }
+
 
             return $.CC.init(classNames, elem);
 
