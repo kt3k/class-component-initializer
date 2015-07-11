@@ -1,0 +1,7 @@
+
+root = true
+
+[*]
+
+trim_trailing_whitespce = true
+insert_final_newline = true

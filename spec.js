@@ -62,7 +62,7 @@ describe('$.CC.init', function () {
 
     it('returns promise which resolves when the init process of each elem resolves', function (done) {
 
-        var bar = $('<div class="bar" />').appendTo(document.body);
+        var bar = $('<div class="bar" />').appendTo('body');
 
         $.CC.init('bar').then(function () {
 
@@ -79,7 +79,7 @@ describe('$.CC.init', function () {
 
             done();
 
-        });
+        }).catch(done);
 
         var a100 = false;
         var a200 = false;
@@ -98,12 +98,12 @@ describe('$.CC.init', function () {
     });
 
 
-    it('initializes multiple class components', function (done) {
+    it('initializes multiple class components', function () {
 
-        var foo = $('<div class="foo" />').appendTo(document.body);
-        var bar = $('<div class="bar" />').appendTo(document.body);
+        var foo = $('<div class="foo" />').appendTo('body');
+        var bar = $('<div class="bar" />').appendTo('body');
 
-        $.CC.init('foo', 'bar').then(function () {
+        $.CC.init(['foo', 'bar']).then(function () {
 
             expect(foo.attr('is_foo')).to.equal('true');
             expect(bar.attr('is_bar')).to.equal('true');
@@ -111,7 +111,39 @@ describe('$.CC.init', function () {
             foo.remove();
             bar.remove();
 
-            done();
+        });
+
+    });
+
+});
+
+describe('$.fn.spawn', function () {
+
+    it('loads the contents from the url and place them in the element (interpreted as html) and initializes them as class-component', function () {
+
+        var elem = $('<div />').appendTo('body');
+
+        elem.spawn('/base/fixture.html', 'foo bar').then(function () {
+
+            expect(elem.children().length).to.equal(3);
+
+        });
+
+    });
+
+    it('resolves with initialized class components', function () {
+
+        var elem = $('<div />').appendTo('body');
+
+        return elem.spawn('/base/fixture.html', 'foo bar').then(function (elements) {
+
+            expect(elements).to.have.length(3);
+
+            elements.forEach(function (elem) {
+
+                expect(elem).to.be.instanceof(HTMLElement);
+
+            });
 
         });
 

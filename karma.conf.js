@@ -21,6 +21,7 @@ module.exports = function(config) {
       'bower_components/actor-system/actor-system.js',
       'bower_components/es6-promise/promise.js',
       'class-component-initializer.js',
+      'fixture.html',
       'spec.js'
     ],
 
