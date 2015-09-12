@@ -2,6 +2,8 @@
 
 > Initialize class components with promise
 
+<span style="color: red">This repository is deprecated in favor of [class-component](https://github.com/kt3k/class-component)</span>
+
 # License
 
 MIT
